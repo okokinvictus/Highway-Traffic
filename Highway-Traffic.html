@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Highway Traffic online game for free. Drive through busy highways, avoid collisions, and test your driving skills in this exciting 3D driving simulator.">
+    <meta name="keywords" content="Highway Traffic, online game, driving game, car game, traffic simulator, 3D driving game">
+    <meta name="canonical" content="https://456799.xyz/highway-traffic">
+    <title>Highway Traffic - Drive Through Busy Highways | Free Online Game</title>
+    <style>
+        /* Apple-inspired color palette */
+        :root {
+            --apple-blue: #007AFF;
+            --apple-indigo: #5856D6;
+            --apple-purple: #AF52DE;
+            --apple-pink: #FF2D55;
+            --apple-red: #FF3B30;
+            --apple-orange: #FF9500;
+            --apple-yellow: #FFCC00;
+            --apple-green: #34C759;
+            --apple-teal: #5AC8FA;
+            --apple-gray: #8E8E93;
+            --apple-gray2: #AEAEB2;
+            --apple-gray3: #C7C7CC;
+            --apple-gray4: #D1D1D6;
+            --apple-gray5: #E5E5EA;
+            --apple-gray6: #F2F2F7;
+            --apple-black: #000000;
+            --apple-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--apple-gray6);
+            color: var(--apple-black);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-indigo));
+            color: var(--apple-white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .game-container {
+            background-color: var(--apple-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .game-info {
+            padding: 2rem;
+        }
+
+        h2 {
+            color: var(--apple-blue);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--apple-white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--apple-indigo);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .controls {
+            background-color: var(--apple-gray6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .controls ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+
+        .controls li {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .controls strong {
+            color: var(--apple-blue);
+            font-weight: 600;
+        }
+
+        .similar-games {
+            margin: 2rem 0;
+        }
+
+        .similar-games-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .similar-game {
+            background-color: var(--apple-white);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .similar-game:hover {
+            transform: translateY(-5px);
+        }
+
+        .similar-game h3 {
+            color: var(--apple-indigo);
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: var(--apple-gray);
+            color: var(--apple-white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: var(--apple-white);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--apple-yellow);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--apple-gray4);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .game-frame {
+                height: 400px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .similar-games-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .game-frame {
+                height: 300px;
+            }
+
+            .game-info {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Highway Traffic</h1>
+            <p class="tagline">Drive through busy highways, avoid collisions, and test your driving skills in this exciting 3D driving simulator!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="game-container">
+            <iframe class="game-frame" src="https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html" allowfullscreen></iframe>
+        </section>
+
+        <section class="game-info">
+            <h2>About Highway Traffic</h2>
+            <p>Highway Traffic is an exciting driving simulator that puts your skills to the test as you navigate through busy highways filled with other vehicles. The game challenges you to drive as far as possible without crashing, earning points and upgrades along the way.</p>
+            
+            <p>With realistic physics, multiple car models, and various game modes, Highway Traffic offers an immersive driving experience that will keep you engaged for hours. Whether you're a casual gamer or a driving enthusiast, this game provides the perfect blend of challenge and entertainment.</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Multiple Game Modes</h3>
+                    <p>Choose from four exciting game modes: One Way, Two Way, Time Attack, and Speed Bomb. Each mode offers unique challenges and gameplay experiences to test different aspects of your driving skills.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Various Car Models</h3>
+                    <p>Select from a variety of car models, each with different handling characteristics. Unlock new vehicles as you progress and earn points in the game.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Weather Options</h3>
+                    <p>Drive under different weather conditions including sunny, night, and rainy. Each weather setting affects visibility and road conditions, adding an extra layer of challenge.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <h2>Game Controls</h2>
+                <ul>
+                    <li><strong>W or Up Arrow:</strong> Accelerate</li>
+                    <li><strong>A/D or Left/Right Arrow:</strong> Steer the car</li>
+                    <li><strong>Space Bar:</strong> Use handbrake</li>
+                    <li><strong>Left Shift or F:</strong> Use car boost (when available)</li>
+                </ul>
+            </div>
+
+            <h2>Game Modes Explained</h2>
+            <p>Highway Traffic offers four distinct game modes to keep the gameplay fresh and exciting:</p>
+            <ul>
+                <li><strong>One Way:</strong> All traffic flows in the same direction. This is the easiest mode for beginners to get familiar with the game mechanics.</li>
+                <li><strong>Two Way:</strong> A more realistic highway experience with traffic flowing in both directions. Navigate carefully to avoid head-on collisions.</li>
+                <li><strong>Time Attack:</strong> Race against the clock to cover as much distance as possible before time runs out. Collect time bonuses to extend your run.</li>
+                <li><strong>Speed Bomb:</strong> Maintain a minimum speed to prevent the bomb from exploding. This mode tests your ability to navigate traffic at high speeds.</li>
+            </ul>
+
+            <h2>Tips for Success</h2>
+            <p>Master Highway Traffic with these helpful tips:</p>
+            <ul>
+                <li>Start with the One Way mode to get comfortable with the controls and game mechanics.</li>
+                <li>Use the handbrake sparingly, as it can cause you to lose control if used incorrectly.</li>
+                <li>Watch for patterns in traffic flow to anticipate the movements of other vehicles.</li>
+                <li>In Time Attack mode, prioritize collecting time bonuses to extend your run.</li>
+                <li>For Speed Bomb mode, focus on finding clear lanes where you can maintain high speeds safely.</li>
+            </ul>
+
+            <section class="similar-games">
+                <h2>Similar Games You Might Enjoy</h2>
+                <div class="similar-games-list">
+                    <div class="similar-game">
+                        <h3>Highway Racer Pro</h3>
+                        <p>Experience improved graphics and more garage options in this exciting traffic racing game.</p>
+                    </div>
+                    <div class="similar-game">
+                        <h3>Traffic Jam 3D</h3>
+                        <p>Navigate through congested city streets and highways in this challenging driving simulator.</p>
+                    </div>
+                    <div class="similar-game">
+                        <h3>ATV Highway Traffic</h3>
+                        <p>Take control of an ATV and race through traffic on highways and off-road terrain.</p>
+                    </div>
+                    <div class="similar-game">
+                        <h3>Highway Cars</h3>
+                        <p>Drive exotic cars at high speeds through traffic in this adrenaline-pumping racing game.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p class="copyright">© 2024 Highway Traffic. All rights reserved. This website is not affiliated with the game developers.</p>
+        </div>
+    </footer>
+</body>
+</html> 
